@@ -2,4 +2,8 @@ name: Show GitHub context
 on: [push, pull_request]
 env:
   GITHUB_CONTEXT: ${{ toJson(github) }}
-run: echo "$GITHUB_CONTEXT" ```
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "$GITHUB_CONTEXT" ```
